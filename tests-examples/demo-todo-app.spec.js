@@ -2,7 +2,7 @@
 const { test, expect } = require('@playwright/test');
 
 test.beforeEach(async ({ page }) => {
-  await page.goto('https://demo.playwright.dev/todomvc');
+  await page.goto('https://eservices.rer.sa');
 });
 
 const TODO_ITEMS = [

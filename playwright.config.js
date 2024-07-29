@@ -1,79 +1,58 @@
 // @ts-check
-const { defineConfig, devices } = require('@playwright/test');
-
-/**
- * Read environment variables from file.
- * https://github.com/motdotla/dotenv
- */
-// require('dotenv').config({ path: path.resolve(__dirname, '.env') });
+import { devices } from '@playwright/test';
+require('dotenv').config();
 
 /**
  * @see https://playwright.dev/docs/test-configuration
+ * @type {import('@playwright/test').PlaywrightTestConfig}
  */
-module.exports = defineConfig({
+
+/**
+ * @see https://playwright.dev/docs/test-configuration
+ * @type {import('@playwright/test').PlaywrightTestConfig<{
+ *  person: { username: string; password: string; dbusername: string; dbpassword: string;
+ * dbserver: string; dbname: string; dbport: number } }>}
+ */
+
+
+
+const config = {
+  globalSetup: require.resolve('./global-setup'),
   testDir: './tests',
-  /* Run tests in files in parallel */
-  fullyParallel: true,
-  /* Fail the build on CI if you accidentally left test.only in the source code. */
-  forbidOnly: !!process.env.CI,
-  /* Retry on CI only */
-  retries: process.env.CI ? 2 : 0,
-  /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : undefined,
-  /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
-  /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
-  use: {
-    /* Base URL to use in actions like `await page.goto('/')`. */
-    // baseURL: 'http://127.0.0.1:3000',
-
-    /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
+  timeout: 300 * 1000,
+  expect: {
+    timeout: 80000,
   },
+  forbidOnly: !!process.env.CI,
+  retries: process.env.CI ? 2 : 0,
+  workers: process.env.CI ? 1 : 1,
+  reporter: [
+    ['html', { open: 'never'}],
 
-  /* Configure projects for major browsers */
-  projects: [
-    {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
-    },
-
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
-
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
-
-    /* Test against mobile viewports. */
-    // {
-    //   name: 'Mobile Chrome',
-    //   use: { ...devices['Pixel 5'] },
-    // },
-    // {
-    //   name: 'Mobile Safari',
-    //   use: { ...devices['iPhone 12'] },
-    // },
-
-    /* Test against branded browsers. */
-    // {
-    //   name: 'Microsoft Edge',
-    //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
-    // },
-    // {
-    //   name: 'Google Chrome',
-    //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
-    // },
   ],
 
-  /* Run your local dev server before starting the tests */
-  // webServer: {
-  //   command: 'npm run start',
-  //   url: 'http://127.0.0.1:3000',
-  //   reuseExistingServer: !process.env.CI,
-  // },
-});
+  use: {
+    //testIdAttribute: 'data-qcauto',
+    storageState: 'storageState.json',
+    actionTimeout: 120000,
+    baseURL: 'https://eservices.rer.sa/',
+    trace: 'on-first-retry',
+    screenshot: 'only-on-failure',
+    video: 'retain-on-failure',
+  },
 
+
+  projects: [
+    {
+      name: 'RER',
+      use: {
+        person: {
+          username: 'mafifi@moc.gov.sa', password: '12345@Qwe', dbusername: process.env.databaseUsername, dbpassword: process.env.databasePassword, dbserver: process.env.databaseServer, dbname: process.env.databaseName, dbport: process.env.databasePort,
+        },
+        ...devices['Desktop chromium'],
+      },
+    },
+  ],
+  outputDir: 'test-results/',
+};
+export default config;

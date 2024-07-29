@@ -1,0 +1,75 @@
+{
+  "cookies": [
+    {
+      "name": "XSRF-TOKEN",
+      "value": "701b0bd1-cc0b-4b51-b380-477e059615d9",
+      "domain": "eservices.rer.sa",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "TS01647dc6",
+      "value": "01de495dedb56b101ad85605a2632fcf32b5ea45707a3076f9de049f158e66e29744d3366612a39fae2ac7345f23efcd45cf7517fd",
+      "domain": ".eservices.rer.sa",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "CLID",
+      "value": "0600c863d47f41cb8a92bd02ff21d9f0.20240729.20250729",
+      "domain": "www.clarity.ms",
+      "path": "/",
+      "expires": 1753774150.671135,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_clck",
+      "value": "1lbfi0l%7C2%7Cfnv%7C0%7C1671",
+      "domain": ".rer.sa",
+      "path": "/",
+      "expires": 1753774150,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga",
+      "value": "GA1.1.1353053017.1722238151",
+      "domain": ".rer.sa",
+      "path": "/",
+      "expires": 1756798150.802715,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga_QBRQYDWJN7",
+      "value": "GS1.1.1722238150.1.0.1722238150.0.0.0",
+      "domain": ".rer.sa",
+      "path": "/",
+      "expires": 1756798150.81136,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://eservices.rer.sa",
+      "localStorage": [
+        {
+          "name": "lang",
+          "value": "ar"
+        }
+      ]
+    }
+  ]
+}
