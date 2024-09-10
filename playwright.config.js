@@ -35,7 +35,7 @@ const config = {
     //testIdAttribute: 'data-qcauto',
     storageState: 'storageState.json',
     actionTimeout: 120000,
-    baseURL: 'https://eservices.rer.sa/',
+    baseURL: 'https://preprodeservices.rer.sa/#/login',
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
@@ -47,7 +47,7 @@ const config = {
       name: 'RER',
       use: {
         person: {
-          username: 'mafifi@moc.gov.sa', password: '12345@Qwe', dbusername: process.env.databaseUsername, dbpassword: process.env.databasePassword, dbserver: process.env.databaseServer, dbname: process.env.databaseName, dbport: process.env.databasePort,
+          username: '1010056347', password: '', dbusername: process.env.databaseUsername, dbpassword: process.env.databasePassword, dbserver: process.env.databaseServer, dbname: process.env.databaseName, dbport: process.env.databasePort,
         },
         ...devices['Desktop chromium'],
       },
