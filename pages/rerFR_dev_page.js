@@ -1,3 +1,5 @@
+
+const { expect } = require('@playwright/test');
 const attachmentValue = 'test-data/sample.pdf';
 class RerFRPage {
     constructor(page) {
@@ -28,7 +30,8 @@ class RerFRPage {
 
     async fillPropertyDetails(region, province, neighborhood, planNumber, pieceNumber) {
         await this.page.locator('p-dropdown').filter({ hasText: 'اسم المنطقة' }).locator('div').first().click();
-        await this.page.getByText(region).click();
+        await this.page.waitForTimeout(2000);        
+        await this.page.getByText(region).nth(0).click();
         await this.page.locator('span').filter({ hasText: 'اسم المحافظة' }).click();
         await this.page.getByText(province).click();
         await this.page.locator('span').filter({ hasText: 'اسم الحي' }).click();
@@ -50,9 +53,10 @@ class RerFRPage {
         await this.page.getByRole('spinbutton').fill(spinNumber);
         await this.page.getByText('متابعة', { exact: true }).click();
         await this.page.locator('a').filter({ hasText: 'إضافة' }).click();
-        await this.page.getByLabel('dropdown trigger').click();
-        await this.page.locator('#pr_id_22_list').getByText('رهن').waitFor({ timeout: 30000 });
-        await this.page.locator('#pr_id_22_list').getByText('رهن').click();
+        await this.page.locator('#rrrType').getByText('اختار').click();
+        await this.page.waitForLoadState('networkidle'); 
+        await this.page.waitForTimeout(2000);        
+        await this.page.getByText('رهن').click();
         await this.page.getByLabel('نوع صاحب الحق').selectOption('28001');
         await this.page.getByLabel('نوع هوية صاحب الحق').selectOption('30002');
         await this.page.getByLabel('رقم هوية صاحب الحق').fill('1071236473');
@@ -69,6 +73,14 @@ class RerFRPage {
         await this.page.getByText('تمت الإضافة بنجاح').click();
         await this.page.locator('.p-checkbox-box').first().click();
         await this.page.locator('div:nth-child(3) > .p-element > .p-checkbox > .p-checkbox-box').click();
+        await this.page.getByRole('button', { name: 'تقديم الطلب' }).click();
+        await this.page.locator('#first').fill('1');
+        await this.page.locator('#second').fill('2');
+        await this.page.locator('#third').fill('3');
+        await this.page.locator('#fourth').fill('4');
+        await this.page.getByRole('button', { name: 'التحقق' }).click();
+        await expect(this.page.getByRole('heading', { name: 'تم انشاء طلبك بنجاح' })).toBeVisible();
+
     }
 }
 

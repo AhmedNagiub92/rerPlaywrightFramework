@@ -1,7 +1,7 @@
 // global-setup.js
-const { chromium } = require('@playwright/test');
+import { chromium } from '@playwright/test';
  
-module.exports = async (config) => {
+export default async (config) => {
   const { baseURL, person } = config.projects[0].use;
   const browser = await chromium.launch({ timeout: 120000 });
   browser.newContext({ignoreHTTPSErrors: true });

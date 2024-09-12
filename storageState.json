@@ -2,7 +2,7 @@
   "cookies": [
     {
       "name": "a810d4580a2c7bbb765c06080e7d3571",
-      "value": "516c1b32099b936f756b1706d0b46892",
+      "value": "b0b07348d7d94a9b82ab22329c75d71d",
       "domain": "preprodeservices.rer.sa",
       "path": "/",
       "expires": -1,
@@ -12,7 +12,7 @@
     },
     {
       "name": "XSRF-TOKEN",
-      "value": "f117a735-a534-46f7-a057-c13793b9ec49",
+      "value": "19a46b24-79ee-41ef-a9ed-6279763e55bb",
       "domain": "preprodeservices.rer.sa",
       "path": "/",
       "expires": -1,
@@ -22,7 +22,7 @@
     },
     {
       "name": "TS012b6d37",
-      "value": "01de495ded32ecd4f87bb27c5d4ab83c1ae4137d3e49e5be8496d0d5da81141073a51ccaedb0f81c387af79ad1e33f7715ebcba24c8f9abea6ef5393aff72f1466c024ba9694039de05ba5ad111c2e2274d60af652",
+      "value": "01de495dede6daf10eb47b4491757ca03edb08e395ac617a7ca54d63b01a6fbe409ce57bd9d3455d21e3e4c246f75aadc400cf99ff63a3bd31b922b51d6a9a8bcddb13b31fe7b0b673211b0a752c1a13c637054a22",
       "domain": "preprodeservices.rer.sa",
       "path": "/",
       "expires": -1,
@@ -32,40 +32,40 @@
     },
     {
       "name": "_ga",
-      "value": "GA1.1.617454721.1725974714",
+      "value": "GA1.1.2053278316.1726140809",
       "domain": ".rer.sa",
       "path": "/",
-      "expires": 1760534713.586396,
+      "expires": 1760700808.519279,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
     },
     {
       "name": "_ga_QBRQYDWJN7",
-      "value": "GS1.1.1725974713.1.0.1725974713.0.0.0",
+      "value": "GS1.1.1726140808.1.0.1726140808.0.0.0",
       "domain": ".rer.sa",
       "path": "/",
-      "expires": 1760534713.600764,
+      "expires": 1760700808.535699,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
     },
     {
       "name": "CLID",
-      "value": "5bd803bc5cde4229a4a3e262b683e8f6.20240910.20250910",
+      "value": "d1e681e854e640c1a596a2a2427ef787.20240912.20250912",
       "domain": "www.clarity.ms",
       "path": "/",
-      "expires": 1757510713.673495,
+      "expires": 1757676809.235754,
       "httpOnly": true,
       "secure": true,
       "sameSite": "None"
     },
     {
       "name": "_clck",
-      "value": "4q43z5%7C2%7Cfp2%7C0%7C1714",
+      "value": "kmeyu5%7C2%7Cfp4%7C0%7C1716",
       "domain": ".rer.sa",
       "path": "/",
-      "expires": 1757510713,
+      "expires": 1757676809,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"

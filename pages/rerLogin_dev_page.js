@@ -25,7 +25,6 @@ class LoginPage {
             await this.page.goBack();
             await this.page.waitForLoadState('load');
         } catch (error) {
-            // Handle error or log it if needed
         }
     }
 
